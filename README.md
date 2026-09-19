@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🩷 Lumi Closet
 
 Your personal AI fashion stylist & digital wardrobe — redesigned with a
@@ -69,3 +70,6 @@ Added: outfit builder, saved looks (Pinterest-style grid), weekly
 planner, packing assistant, profile page with style preferences, the
 AI stylist chat UI with a working chat-history table and a graceful
 fallback when no OpenAI key is set, and the full visual redesign.
+=======
+# Lumi-AI-Closet
+>>>>>>> be9a7354d94094fa5848041192c4fd144ea2af01
