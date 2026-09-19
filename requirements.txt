@@ -1,0 +1,21 @@
+# Core app
+streamlit>=1.58
+supabase>=2.31
+python-dotenv>=1.0
+
+# Image handling (uploads, previews)
+pillow>=10.0
+
+# AI features
+openai>=1.40                 # AI Stylist chat (graceful fallback if unset)
+google-generativeai>=0.7     # photo auto-tagging (graceful fallback if unset)
+
+# NOTE: the previous requirements.txt was a full `pip freeze` from a
+# Windows dev machine. It pinned Windows-only packages (pywin32,
+# pypiwin32, comtypes, pyttsx3) that fail to install on Linux/macOS --
+# including Streamlit Cloud -- and pulled in ~2GB of unrelated ML
+# libraries (tensorflow, torch, keras, langchain, opencv, scikit-learn)
+# that nothing in this project imports. Trimmed to what the app
+# actually uses; pip will resolve the rest of the dependency tree
+# (postgrest, storage3, realtime, httpx, etc.) automatically via
+# `supabase`.
