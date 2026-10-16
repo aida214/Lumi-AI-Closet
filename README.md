@@ -1,4 +1,4 @@
-# Lumi Closet ✨
+# Lumi Closet 
 ### Your Personal AI-Powered Wardrobe & Styling Assistant
 
 Lumi Closet is an interactive wardrobe management and personal styling application built with **Python and Streamlit**. It helps users organize their clothing, create outfit combinations, plan daily looks, and explore their personal style with intelligent recommendations.
