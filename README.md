@@ -1,4 +1,4 @@
-# Lumi Closet 
+# Lumi Closet ✨
 ### Your Personal AI-Powered Wardrobe & Styling Assistant
 
 Lumi Closet is an interactive wardrobe management and personal styling application built with **Python and Streamlit**. It helps users organize their clothing, create outfit combinations, plan daily looks, and explore their personal style with intelligent recommendations.
@@ -18,6 +18,35 @@ Designed with a modern, aesthetic interface, Lumi Closet combines wardrobe organ
 - **Wear Tracking:** Track clothing usage over time.
 - **Personalized Profiles:** Manage personal information and style preferences.
 - **Data Export:** Export supported wardrobe data.
+
+## Screenshots
+
+### Dashboard
+![Lumi Closet Dashboard](screenshots/dashboard.png)
+
+### Digital Wardrobe
+![Lumi Closet Wardrobe](screenshots/wardrobe.png)
+
+### Outfit Builder
+![Lumi Closet Outfit Builder](screenshots/outfitt.png)
+
+### Lookbook
+![Lumi Closet Lookbook](screenshots/lookbook.png)
+
+### Outfit Planner
+![Lumi Closet Planner](screenshots/planner.png)
+
+### AI Stylist
+![Lumi Closet AI Stylist](screenshots/stylist.png)
+
+### Packing Assistant
+![Lumi Closet Packing Assistant](screenshots/packing.png)
+
+### Wardrobe Insights
+![Lumi Closet Insights](screenshots/insight.png)
+
+### User Profile
+![Lumi Closet Profile](screenshots/profile.png)
 
 ## Tech Stack
 
@@ -44,11 +73,9 @@ Designed with a modern, aesthetic interface, Lumi Closet combines wardrobe organ
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/lumi-closet.git
-cd lumi-closet
+git clone https://github.com/aida214/Lumi-AI-Closet.git
+cd Lumi-AI-Closet
 ```
-
-Replace `YOUR-USERNAME` with your GitHub username.
 
 **2. Create a virtual environment**
 
@@ -76,7 +103,7 @@ SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY"
 
 Add any optional AI provider credentials required by your configuration.
 
-**Never upload real credentials or your `secrets.toml` file to GitHub.**
+**Never upload real credentials, API keys, or your `secrets.toml` file to GitHub.**
 
 **5. Set up the database**
 
@@ -93,14 +120,25 @@ Open the local URL displayed in the terminal, usually `http://localhost:8501`.
 ## Project Structure
 
 ```text
-lumi-closet/
+Lumi-AI-Closet/
 ├── app.py
 ├── app_pages/
 ├── components/
 ├── database/
 ├── utils/
 ├── assets/
+├── screenshots/
+│   ├── dashboard.png
+│   ├── wardrobe.png
+│   ├── outfitt.png
+│   ├── lookbook.png
+│   ├── planner.png
+│   ├── stylist.png
+│   ├── packing.png
+│   ├── insight.png
+│   └── profile.png
 ├── tests/
+├── docs/
 ├── schema.sql
 ├── requirements.txt
 ├── requirements-dev.txt
