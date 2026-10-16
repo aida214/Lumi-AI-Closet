@@ -322,7 +322,7 @@ def test_navigation_helpers(signed_in):
 # ---- security and helpers --------------------------------------------------
 
 def test_html_helpers_escape_user_content():
-    hostile = '<img src=x onerror=alert(1)>"\n\'' 
+    hostile = '<img src=x onerror=alert(1)>"\n\''
     markup = ui.image_box("https://x.test/a.jpg\" onerror=\"alert(1)", hostile) + ui.chips_html([hostile])
     assert "<img src=x" not in markup
     assert 'onerror="alert' not in markup.replace("&quot;", "")

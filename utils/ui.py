@@ -43,7 +43,7 @@ def section_title(title):
 
 def chip_row(labels, dark_first=False):
     chips = []
-    for i, label in enumerate(l for l in labels if l):
+    for i, label in enumerate(item for item in labels if item):
         cls = "lc-chip dark" if dark_first and i == 0 else "lc-chip"
         chips.append(f'<span class="{cls}">{esc(label)}</span>')
     if chips:
@@ -51,7 +51,7 @@ def chip_row(labels, dark_first=False):
 
 
 def chips_html(labels):
-    chips = "".join(f'<span class="lc-chip">{esc(l)}</span>' for l in labels if l)
+    chips = "".join(f'<span class="lc-chip">{esc(item)}</span>' for item in labels if item)
     return f'<div class="lc-chips">{chips}</div>' if chips else ""
 
 

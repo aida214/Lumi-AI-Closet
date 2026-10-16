@@ -4,6 +4,7 @@ It records what pages try to render and returns sensible default widget values.
 It is NOT a replacement for trying the app in a browser. It catches typos,
 wrong names, bad data handling and broken callbacks.
 """
+
 import types
 from datetime import date
 
@@ -41,10 +42,25 @@ def build(secrets=None):
     def record(name):
         def fn(*args, **kwargs):
             st.calls.append((name, args, kwargs))
+
         return fn
 
-    for name in ["markdown", "caption", "write", "info", "error", "warning", "success", "toast", "image",
-                 "dataframe", "bar_chart", "progress", "code", "set_page_config"]:
+    for name in [
+        "markdown",
+        "caption",
+        "write",
+        "info",
+        "error",
+        "warning",
+        "success",
+        "toast",
+        "image",
+        "dataframe",
+        "bar_chart",
+        "progress",
+        "code",
+        "set_page_config",
+    ]:
         setattr(st, name, record(name))
 
     def widget(default):
@@ -57,6 +73,7 @@ def build(secrets=None):
                 st.session_state[key] = value
             st.calls.append(("widget", (label,), kwargs))
             return value
+
         return fn
 
     def first_option(label, args, kwargs):
@@ -65,21 +82,25 @@ def build(secrets=None):
         return options[index] if options and index is not None else None
 
     st.selectbox = widget(first_option)
-    st.pills = widget(lambda l, a, k: k.get("default"))
-    st.multiselect = widget(lambda l, a, k: k.get("default", []))
-    st.text_input = widget(lambda l, a, k: k.get("value", ""))
-    st.text_area = widget(lambda l, a, k: k.get("value", ""))
-    st.number_input = widget(lambda l, a, k: k.get("value", 0))
-    st.date_input = widget(lambda l, a, k: k.get("value", date.today()))
-    st.toggle = widget(lambda l, a, k: False)
-    st.checkbox = widget(lambda l, a, k: False)
-    st.file_uploader = widget(lambda l, a, k: None)
-    st.chat_input = widget(lambda l, a, k: None)
-    st.button = widget(lambda l, a, k: False)
-    st.download_button = widget(lambda l, a, k: False)
-    st.form_submit_button = widget(lambda l, a, k: False)
 
-    st.columns = lambda spec, **kw: [Ctx() for _ in range(spec if isinstance(spec, int) else len(spec))]
+    st.pills = widget(lambda label, a, k: k.get("default"))
+    st.multiselect = widget(lambda label, a, k: k.get("default", []))
+    st.text_input = widget(lambda label, a, k: k.get("value", ""))
+    st.text_area = widget(lambda label, a, k: k.get("value", ""))
+
+    st.number_input = widget(lambda label, a, k: k.get("value", 0))
+    st.date_input = widget(lambda label, a, k: k.get("value", date.today()))
+    st.toggle = widget(lambda label, a, k: False)
+    st.checkbox = widget(lambda label, a, k: False)
+    st.file_uploader = widget(lambda label, a, k: None)
+    st.chat_input = widget(lambda label, a, k: None)
+    st.button = widget(lambda label, a, k: False)
+    st.download_button = widget(lambda label, a, k: False)
+    st.form_submit_button = widget(lambda label, a, k: False)
+
+    st.columns = lambda spec, **kw: [
+        Ctx() for _ in range(spec if isinstance(spec, int) else len(spec))
+    ]
     st.tabs = lambda labels: [Ctx() for _ in labels]
     for name in ["container", "expander", "popover", "form", "spinner", "chat_message"]:
         setattr(st, name, lambda *a, **k: Ctx())
