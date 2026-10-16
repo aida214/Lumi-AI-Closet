@@ -28,7 +28,7 @@ Designed with a modern, aesthetic interface, Lumi Closet combines wardrobe organ
 ![Lumi Closet Wardrobe](screenshots/wardrobe.png)
 
 ### Outfit Builder
-![Lumi Closet Outfit Builder](screenshots/outfitt.png)
+![Lumi Closet Outfit Builder](screenshots/outfitss.png)
 
 ### Lookbook
 ![Lumi Closet Lookbook](screenshots/lookbook.png)
